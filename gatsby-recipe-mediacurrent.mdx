@@ -1,5 +1,55 @@
-import { Prettier } from './recipe/prettier/prettier-recipe.mdx';
+export default () => (
+Make sure all of your code is run through Prettier when you commit it to git. We achieve this by configuring prettier to run on git hooks using husky and lint-staged.
 
 ---
 
-<Prettier />
+Install packages.
+
+<NPMPackage name="husky" />
+<NPMPackage name="prettier" />
+<NPMPackage name="lint-staged" />
+
+---
+
+Implement git hooks for prettier.
+
+<NPMPackageJson
+  name="husky"
+  value={{
+    hooks: {
+      'pre-commit': 'lint-staged'
+    }
+  }}
+/>
+<NPMPackageJson
+  name="lint-staged"
+  value={{
+    '*.{js,md,mdx,json}': ['prettier --write']
+  }}
+/>
+
+---
+
+Write prettier config files.
+
+<File
+  path=".prettierrc"
+  content={`https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/prettier/.prettierrc`}
+/>
+<File
+  path=".prettierignore"
+  content={`https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/prettier/.prettierignore`}
+/>
+
+---
+
+Write prettier script.
+
+<NpmScript
+  name="format"
+  command='npx prettier --write \"**/*.{js,md,mdx,json}\"'
+/>
+
+Prettier, husky, and lint-staged are now installed! You can edit your `.prettierrc`
+if you'd like to change your prettier configuration.
+)
