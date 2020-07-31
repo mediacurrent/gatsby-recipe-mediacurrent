@@ -1,10 +1,12 @@
 # Gatsby Recipe Mediacurrent
 
+# Gatsby Recipe Mediacurrent - Prettier
+
 Make sure all of your code is run through Prettier when you commit it to git. We achieve this by configuring prettier to run on git hooks using husky and lint-staged.
 
 ---
 
-Install packages.
+Install prettier packages.
 
 <NPMPackage name="husky" />
 <NPMPackage name="prettier" />
@@ -16,17 +18,17 @@ Implement git hooks for prettier.
 
 <NPMPackageJson
   name="husky"
-  value={{
+  value={`{
     hooks: {
       'pre-commit': 'lint-staged'
     }
-  }}
+  }`}
 />
 <NPMPackageJson
   name="lint-staged"
-  value={{
+  value={`{
     '*.{js,md,mdx,json}': ['prettier --write']
-  }}
+  }`}
 />
 
 ---
@@ -35,11 +37,11 @@ Write prettier config files.
 
 <File
   path=".prettierrc"
-  content="https://github.com/mediacurrent/gatsby-recipe-mediacurrent/blob/master/recipe/prettier/.prettierrc"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/prettier/.prettierrc"
 />
 <File
   path=".prettierignore"
-  content="https://github.com/mediacurrent/gatsby-recipe-mediacurrent/blob/master/recipe/prettier/.prettierignore"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/prettier/.prettierignore"
 />
 
 ---
@@ -53,3 +55,98 @@ Write prettier script.
 
 Prettier, husky, and lint-staged are now installed! You can edit your `.prettierrc`
 if you'd like to change your prettier configuration.
+
+# Gatsby Recipe Mediacurrent - ESLint
+
+Config ESLint plugins and settings to work with Mediacurrent standards.
+
+---
+
+Install ESLint packages
+
+<NPMPackage name="eslint" />
+<NPMPackage name="babel-eslint" />
+<NPMPackage name="eslint-config-prettier" />
+<NPMPackage name="eslint-plugin-jsx-a11y" />
+<NPMPackage name="eslint-plugin-react" />
+<NPMPackage name="eslint-plugin-react-hooks" />
+
+---
+
+Write ESLint config file.
+
+<File
+  path=".eslintrc.json"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/eslint/.eslintrc.json"
+/>
+
+ESLint is now installed and configured!
+
+# Gatsby Recipe Mediacurrent - Babel
+
+Config Babel plugins and settings to work with Mediacurrent standards.
+
+---
+
+Install Babel packages
+
+<NPMPackage name="@babel/core" />
+<NPMPackage name="@babel/plugin-proposal-optional-chaining" />
+<NPMPackage name="babel-loader" />
+<NPMPackage name="babel-plugin-macros" />
+<NPMPackage name="babel-preset-gatsby" />
+
+---
+
+Add Babel config to package.json.
+
+<File
+  path=".babelrc"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/babel/.babelrc"
+/>
+
+Babel is now installed and configured!
+
+# Gatsby Recipe Mediacurrent - Plop
+
+Add plop file and configuration for easy and consistent component creation.
+
+---
+
+Install plop packages.
+
+<NPMPackage name="plop" />
+
+---
+
+Create plop config and templates.
+
+<File
+  path="plopfile.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plopfile.js"
+/>
+<Directory path="plop-templates" />
+<File
+  path="plop-templates/component.js.hbs"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plop-templates/component.js.hbs"
+/>
+<File
+  path="plop-templates/data.js.hbs"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plop-templates/data.js.hbs"
+/>
+<File
+  path="plop-templates/story.js.hbs"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plop-templates/story.js.hbs"
+/>
+<File
+  path="plop-templates/styles.module.scss.hbs"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plop-templates/styles.module.scss.hbs"
+/>
+
+---
+
+Add npm script for plopping a component.
+
+<NPMPackageJson name="plop" value={`plop component`} />
+
+Plop is now installed! You can create a new component by running `npm run component`.
