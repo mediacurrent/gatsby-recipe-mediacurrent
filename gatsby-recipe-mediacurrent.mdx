@@ -8,11 +8,25 @@ Establish the basic project structure.
 
 Make directories.
 
-<Directory path="src/utils" />
+<File
+  path="./src/utils/README.md"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/structure/utils/README.md"
+/>
+
+---
+
+Add scripts.
+
+<NPMScript name="start" command="gatsby develop -H 0.0.0.0" />
+<NPMScript name="build:gatsby" command="gatsby build" />
+
+---
+
+Updates to gatsby-\* files.
 
 <File
-  path="src/utils/README.md"
-  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/structure/utils/README.md"
+  path="./gatsby-node.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/structure/gatbsy-node.js"
 />
 
 Project structure complete!
@@ -208,7 +222,7 @@ Configure Storybook / Gatsby Link settings (preview.js)
 
 <File
   path="./.storybook/preview.js"
-  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/preview.js"
+  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/storybook/preview.js"
 />
 
 ---
@@ -217,7 +231,7 @@ Add location decorator.
 
 <File
   path="./.storybook/locationDecorator.js"
-  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/locationDecorator.js"
+  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/storybook/locationDecorator.js"
 />
 
 ---
@@ -242,3 +256,30 @@ Add Storybook npm scripts
 ## You're all done!
 
 Before your run Storybook make sure you run `gatsby develop` or `gatsby build`. This ensures that Gatsby's GraphQL data is available in Storybook.
+
+# Gatsby Recipe Mediacurrent - Sass Lint
+
+Adds sass-lint configuration for consistent CSS rules.
+
+---
+
+Install sass-lint package.
+
+<NPMPackage name="sass-lint" />
+
+---
+
+Create sass-lint config file.
+
+<File
+  path="./.sass-lint.yml"
+  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/sass-lint/.sass-lint.yml"
+/>
+
+---
+
+Add config file to package.json.
+
+<NPMPackageJson name="sasslintConfig" value=".sass-lint.yml" />
+
+Sass-lint is now installed and configured!

@@ -23,3 +23,17 @@ The Recipe aids in the following areas of a project:
 - ENV Variables
 - Jest test running
 - Plop component generator
+
+## Installation
+
+To use this on a new project run:
+
+`npx gatsby recipes https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/gatsby-recipe-mediacurrent.mdx`
+
+## Updating a Project
+
+If a project has already used this Recipe, and the Recipe has since been updated with a new feature or fix, the project can consume that update from upstream. Updating is accomplished the same way as installing:
+
+`npx gatsby recipes https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/gatsby-recipe-mediacurrent.mdx`
+
+This will show a diff at each step for files that may need to change.
