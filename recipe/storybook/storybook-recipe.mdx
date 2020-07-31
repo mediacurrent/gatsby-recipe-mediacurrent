@@ -1,0 +1,72 @@
+# Add Storybook to Gatsby project
+
+[Storybook](https://storybook.js.org/) is an open source tool for developing UI components in isolation for React, Vue, and Angular. It makes building stunning UIs organized and efficient.
+
+---
+
+Install babel plugins and presets as well as the Storybook React NPM packages and addons
+
+<NPMPackage name="babel-loader" />
+<NPMPackage name="@babel/preset-react" />
+<NPMPackage name="@babel/preset-env" />
+<NPMPackage name="@babel/plugin-proposal-class-properties" />
+<NPMPackage name="babel-plugin-remove-graphql-queries" />
+<NPMPackage name="babel-plugin-react-docgen" />
+<NPMPackage name="focus-visible" />
+
+<NPMPackage name="@storybook/react" />
+<NPMPackage name="@storybook/addon-actions" />
+<NPMPackage name="@storybook/addon-docs" />
+<NPMPackage name="@storybook/addon-knobs" />
+<NPMPackage name="@storybook/addon-storyshots" />
+<NPMPackage name="@storybook/addon-a11y" />
+
+---
+
+Create JavaScript Storybook webpack config (main.js)
+
+<File
+  path="./.storybook/main.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/storybook/main.js"
+/>
+
+---
+
+Configure Storybook / Gatsby Link settings (preview.js)
+
+<File
+  path="./.storybook/preview.js"
+  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/preview.js"
+/>
+
+---
+
+Add location decorator.
+
+<File
+  path="./.storybook/locationDecorator.js"
+  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/locationDecorator.js"
+/>
+
+---
+
+Add Storybook npm scripts
+
+<NPMScript
+  name="build:storybook"
+  command="NODE_ENV=production build-storybook --quiet -s ./static -c .storybook -o static/storybook"
+/>
+<NPMScript
+  name="build"
+  command="npm run build:gatsby && npm run build:storybook && copyfiles -u 1 static/storybook/* public"
+/>
+<NPMScript
+  name="storybook"
+  command="NODE_ENV=production start-storybook -s ./static -p 6006"
+/>
+
+---
+
+## You're all done!
+
+Before your run Storybook make sure you run `gatsby develop` or `gatsby build`. This ensures that Gatsby's GraphQL data is available in Storybook.
