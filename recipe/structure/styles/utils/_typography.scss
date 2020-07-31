@@ -1,0 +1,24 @@
+@mixin font-primary {
+  font-family: -apple-system, system-ui, SegoeUI, Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+@mixin font-secondary {
+  font-family: -apple-system, system-ui, SegoeUI, Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+// Font weight vars.
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+// Global styles for headings.
+@mixin font-size-heading1 {
+  font-size: 3.6rem;
+  font-weight: $font-weight-light;
+
+  @include breakpoint($bp-md) {
+    font-size: 6rem;
+  }
+}

@@ -1,0 +1,27 @@
+// When you add a new variable in here, make sure to add it to the
+// exports declaration at the end of the file.
+// That will make sure it ends up in the style guide swatches.
+
+// Neutrals
+$color-white: #fff;
+$color-black: #000;
+
+//Accent Colors
+
+$color-turkish-rose: #9f6572;
+$color-blue-bayoux: #4c6380;
+$color-japanese-laurel: #008000;
+
+// Exporting the variables here so we can display them in the style guide.
+:export {
+  // sass-lint:disable-block no-misspelled-properties no-color-keywords
+  neutral: {
+    white: $color-white;
+    black: $color-black;
+  }
+  accent: {
+    turkishrose: $color-turkish-rose;
+    bluebayoux: $color-blue-bayoux;
+    japaneselaurel: $color-japanese-laurel;
+  }
+}
