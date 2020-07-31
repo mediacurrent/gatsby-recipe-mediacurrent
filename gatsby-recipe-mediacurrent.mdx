@@ -29,6 +29,15 @@ Updates to gatsby-\* files.
   content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/structure/gatbsy-node.js"
 />
 
+---
+
+Add base .gitignore file.
+
+<File
+  path="./.gitignore"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/structure/.gitignore"
+/>
+
 Project structure complete!
 
 # Gatsby Recipe Mediacurrent - Prettier
@@ -236,6 +245,15 @@ Add location decorator.
 
 ---
 
+Update gitignore file.
+
+<File
+  path="./.gitignore"
+  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/storybook/.gitignore"
+/>
+
+---
+
 Add Storybook npm scripts
 
 <NPMScript
@@ -283,3 +301,54 @@ Add config file to package.json.
 <NPMPackageJson name="sasslintConfig" value=".sass-lint.yml" />
 
 Sass-lint is now installed and configured!
+
+# Gatsby Recipe Mediacurrent - ENV
+
+Setup .env files and how they work with Gatsby.
+
+---
+
+Update .gitignore file.
+
+<File
+  path="./.gitignore"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/env/.gitignore"
+/>
+
+---
+
+Create .env files
+
+<File path="./.env" content="" />
+
+<File path="./.prod.env" content="" />
+
+<File path="./.dev.env" content="" />
+
+---
+
+Install Gatsby plugin for access ENV vars inside components.
+
+<NPMPackage name="gatsby-plugin-env-variables" />
+
+<GatsbyPlugin
+  name="gatsby-plugin-env-variables"
+  options={{
+    allowList: []
+  }}
+/>
+
+---
+
+Import ENV to gatsby-node and gatsby-config files.
+
+<File
+  path="./gatsby-node.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/env/gatsby-node.js"
+/>
+<File
+  path="./gatsby-config.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/env/gastby-config.js"
+/>
+
+Okay, env files have been setup!
