@@ -1,0 +1,110 @@
+# Gatsby Recipe Mediacurrent - Jest
+
+Configure jest folders, files, and settings.
+
+---
+
+Install jest packages and dependencies.
+
+<NPMPackage name="jest" />
+<NPMPackage name="babel-jest" />
+<NPMPackage name="jest-runner-eslint" />
+<NPMPackage name="jest-runner-sasslint" />
+<NPMPackage name="@testing-library/react" />
+<NPMPackage name="@testing-library/jest-dom" />
+<NPMPackage name="react-test-renderer" />
+
+---
+
+Create mock directory and files.
+
+<Directory path="./__mocks__" />
+<File
+  path="./__mocks__/gatsby.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/__mocks__/gatsby.js"
+/>
+<File
+  path="./__mocks__/file-mock.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/__mocks__/file-mock.js"
+/>
+
+---
+
+Create config files and directories.
+
+<Directory path="./test" />
+
+<File
+  path="./test/jest-common.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/test/jest-common.js"
+/>
+<File
+  path="./test/jest-loadershim.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/test/jest-loadershim.js"
+/>
+<File
+  path="./test/jest-preprocess.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/test/jest-preprocess.js"
+/>
+<File
+  path="./test/jest.client.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/test/jest.client.js"
+/>
+<File
+  path="./test/jest.lint.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/test/jest.lint.js"
+/>
+<File
+  path="./test/jest.scss.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/test/jest.scss.js"
+/>
+<File
+  path="./test/jest.setup.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/test/jest.setup.js"
+/>
+<File
+  path="./test/jest.storybook.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/test/jest.storybook.js"
+/>
+<File
+  path="./jest.config.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/jest.config.js"
+/>
+
+---
+
+Add file for mocking hooks in Jest Storyshots.
+
+<File
+  path="./storyshots.test.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/jest/storyshots.test.js"
+/>
+
+---
+
+Add npm scripts for Jest.
+
+<NPMScript name="test" command="jest --silent" />
+<NPMScript name="test:coverage" command="jest --coverage" />
+<NPMScript name="test:update" command="npm run test:coverage -- -u" />
+<NPMScript name="lint" command="npm run lint:sass && npm run lint:js" />
+<NPMScript name="lint:js" command="jest --config ./test/jest.lint.js" />
+<NPMScript name="lint:sass" command="jest --config ./test/jest.scss.js" />
+
+---
+
+Add Jest to lint-staged.
+
+<NPMPackageJson
+  name="lint-staged"
+  value={`{
+     "src/**/*.js": [
+      "jest --findRelatedTests"
+    ],
+    "*.scss": [
+      "npm run lint:sass"
+    ]
+  }`}
+/>
+
+Alright! Jest is now installed and configured for your project!
