@@ -17,17 +17,17 @@ Implement git hooks for prettier.
 
 <NPMPackageJson
   name="husky"
-  value={{
+  value={`{
     hooks: {
       'pre-commit': 'lint-staged'
     }
-  }}
+  }`}
 />
 <NPMPackageJson
   name="lint-staged"
-  value={{
+  value={`{
     '*.{js,md,mdx,json}': ['prettier --write']
-  }}
+  }`}
 />
 
 ---
@@ -36,11 +36,11 @@ Write prettier config files.
 
 <File
   path=".prettierrc"
-  content="https://github.com/mediacurrent/gatsby-recipe-mediacurrent/blob/master/recipe/prettier/.prettierrc"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/prettier/.prettierrc"
 />
 <File
   path=".prettierignore"
-  content="https://github.com/mediacurrent/gatsby-recipe-mediacurrent/blob/master/recipe/prettier/.prettierignore"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/prettier/.prettierignore"
 />
 
 ---

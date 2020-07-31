@@ -1,0 +1,26 @@
+import React from 'react';
+import {{pascalCase name}} from './{{dashCase name}}';
+
+import data from './data';
+
+export default {
+  title: 'Components|{{titleCase name}}'
+};
+
+export const Default = () => (
+  <div>
+    <{{pascalCase name}} />
+  </div>
+);
+
+Default.story = {
+  parameters: {
+    info: {
+      inline: true,
+      text: `
+      ### Description
+      The {{pascalCase name}} component.
+    `
+    }
+  }
+};

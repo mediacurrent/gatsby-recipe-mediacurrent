@@ -1,0 +1,49 @@
+export default () => (
+# Gatsby Recipe Mediacurrent - Plop
+
+Add plop file and configuration for easy and consistent component creation.
+
+---
+
+Install packages.
+
+<NPMPackage name="plop" />
+
+---
+
+Create plop config and templates.
+
+<File
+  path="plopfile.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plopfile.js"
+/>
+<Directory path="plop-templates" />
+<File
+  path="plop-templates/component.js.hbs"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plop-templates/component.js.hbs"
+/>
+<File
+  path="plop-templates/data.js.hbs"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plop-templates/data.js.hbs"
+/>
+<File
+  path="plop-templates/story.js.hbs"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plop-templates/story.js.hbs"
+/>
+<File
+  path="plop-templates/styles.module.scss.hbs"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/plop/plop-templates/styles.module.scss.hbs"
+/>
+
+---
+
+Add npm script for plopping a component.
+
+<NPMPackageJson
+  name="plop"
+  value={`plop component`}
+/>
+
+Prettier, husky, and lint-staged are now installed! You can edit your `.prettierrc`
+if you'd like to change your prettier configuration.
+)
