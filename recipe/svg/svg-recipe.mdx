@@ -1,0 +1,32 @@
+# Gatsby Recipe Mediacurrent - SVGs
+
+Makes the unique changes necessary for using SVGs in the project.
+
+---
+
+Install Gatsby SVG plugin.
+
+<NPMPackage name="gatsby-plugin-react-svg" />
+
+---
+
+Configure Gatsby SVG plugin.
+
+<GatsbyPlugin
+  name="gatsby-plugin-react-svg"
+  options={{
+    rule: {
+      include: /assets\/.+\.svg$/
+    }
+  }}
+/>
+---
+
+Update the Storybook config to process SVGs.
+
+<File
+  path="./.storybook/main.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/svg/storybook-main.js"
+/>
+
+Great! You can now import SVGs as React components, or use them inline in your CSS.

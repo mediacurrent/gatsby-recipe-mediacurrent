@@ -231,7 +231,7 @@ Configure Storybook / Gatsby Link settings (preview.js)
 
 <File
   path="./.storybook/preview.js"
-  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/storybook/preview.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/storybook/preview.js"
 />
 
 ---
@@ -240,7 +240,7 @@ Add location decorator.
 
 <File
   path="./.storybook/locationDecorator.js"
-  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/storybook/locationDecorator.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/storybook/locationDecorator.js"
 />
 
 ---
@@ -249,7 +249,7 @@ Update gitignore file.
 
 <File
   path="./.gitignore"
-  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/storybook/.gitignore"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/storybook/.gitignore"
 />
 
 ---
@@ -291,7 +291,7 @@ Create sass-lint config file.
 
 <File
   path="./.sass-lint.yml"
-  content="https://raw.githubusercontent.com/PaulieScanlon/gatsby-recipe-storybook-js/master/recipe/sass-lint/.sass-lint.yml"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/sass-lint/.sass-lint.yml"
 />
 
 ---
@@ -352,3 +352,36 @@ Import ENV to gatsby-node and gatsby-config files.
 />
 
 Okay, env files have been setup!
+
+# Gatsby Recipe Mediacurrent - SVGs
+
+Makes the unique changes necessary for using SVGs in the project.
+
+---
+
+Install Gatsby SVG plugin.
+
+<NPMPackage name="gatsby-plugin-react-svg" />
+
+---
+
+Configure Gatsby SVG plugin.
+
+<GatsbyPlugin
+  name="gatsby-plugin-react-svg"
+  options={{
+    rule: {
+      include: /assets\/.+\.svg$/
+    }
+  }}
+/>
+---
+
+Update the Storybook config to process SVGs.
+
+<File
+  path="./.storybook/main.js"
+  content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/svg/storybook-main.js"
+/>
+
+Great! You can now import SVGs as React components, or use them inline in your CSS.
