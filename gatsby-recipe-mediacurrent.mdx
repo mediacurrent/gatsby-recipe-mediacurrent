@@ -120,17 +120,17 @@ Implement git hooks for prettier.
 
 <NPMPackageJson
   name="husky"
-  value={`{
+  value={{
     hooks: {
       'pre-commit': 'lint-staged'
     }
-  }`}
+  }}
 />
 <NPMPackageJson
   name="lint-staged"
-  value={`{
+  value={{
     '*.{js,md,mdx,json}': ['prettier --write']
-  }`}
+  }}
 />
 
 ---
@@ -359,7 +359,7 @@ Create sass-lint config file.
 
 Add config file to package.json.
 
-<NPMPackageJson name="sasslintConfig" value=".sass-lint.yml" />
+<NPMPackageJson name="sasslintConfig" value={".sass-lint.yml"} />
 
 Sass-lint is now installed and configured!
 
@@ -546,14 +546,14 @@ Add Jest to lint-staged.
 
 <NPMPackageJson
   name="lint-staged"
-  value={`{
+  value={{
      "src/**/*.js": [
       "jest --findRelatedTests"
     ],
     "*.scss": [
       "npm run lint:sass"
     ]
-  }`}
+  }}
 />
 
 Alright! Jest is now installed and configured for your project!
