@@ -1,4 +1,4 @@
 # dotenv environment variables file
 .env
-prod.env
-dev.env
+.env.production
+.env.development
