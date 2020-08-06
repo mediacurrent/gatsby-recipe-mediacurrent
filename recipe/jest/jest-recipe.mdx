@@ -97,14 +97,14 @@ Add Jest to lint-staged.
 
 <NPMPackageJson
   name="lint-staged"
-  value={{
+  value={`{
      "src/**/*.js": [
       "jest --findRelatedTests"
     ],
     "*.scss": [
       "npm run lint:sass"
     ]
-  }}
+  }`}
 />
 
 Alright! Jest is now installed and configured for your project!

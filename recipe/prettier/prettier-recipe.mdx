@@ -17,17 +17,17 @@ Implement git hooks for prettier.
 
 <NPMPackageJson
   name="husky"
-  value={{
+  value={`{
     hooks: {
       'pre-commit': 'lint-staged'
     }
-  }}
+  }`}
 />
 <NPMPackageJson
   name="lint-staged"
-  value={{
+  value={`{
     '*.{js,md,mdx,json}': ['prettier --write']
-  }}
+  }`}
 />
 
 ---
