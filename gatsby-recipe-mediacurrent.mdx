@@ -103,12 +103,11 @@ Add styles.
 Project structure complete!
 
 # Gatsby Recipe Mediacurrent - Prettier
-
 Make sure all of your code is run through Prettier when you commit it to git. We achieve this by configuring prettier to run on git hooks using husky and lint-staged.
 
 ---
 
-Install prettier packages.
+Install packages.
 
 <NPMPackage name="husky" />
 <NPMPackage name="prettier" />
@@ -120,17 +119,17 @@ Implement git hooks for prettier.
 
 <NPMPackageJson
   name="husky"
-  value={{
+  value={`{
     hooks: {
       "pre-commit": "lint-staged"
     }
-  }}
+  }`}
 />
 <NPMPackageJson
   name="lint-staged"
-  value={{
-    "*.{js,md,mdx,json}": ["prettier --write"]
-  }}
+  value={`{
+    "*.{js,md,mdx,json}": "['prettier --write']""
+  }`}
 />
 
 ---
@@ -146,6 +145,17 @@ Write prettier config files.
   content="https://raw.githubusercontent.com/mediacurrent/gatsby-recipe-mediacurrent/master/recipe/prettier/.prettierignore"
 />
 
+---
+
+Write prettier script.
+
+<NPMScript
+  name="format"
+  command='npx prettier --write \"**/*.{js,md,mdx,json}\"'
+/>
+
+Prettier, husky, and lint-staged are now installed! You can edit your `.prettierrc`
+if you'd like to change your prettier configuration.
 ---
 
 Write prettier script.
